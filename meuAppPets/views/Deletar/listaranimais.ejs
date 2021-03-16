@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Animais</title>
+</head>
+
+<body>
+    <h1>Animais</h1>
+
+    <ul>
+        <% perdidos.forEach(animal => { %>
+
+            <li>
+                <%= animal.nome %>
+                    <form action="/animais/deletar/<%= animal.id %>?_method=DELETE" method="POST">
+                        <button type="submit">Deletar</button>
+                    </form>
+            </li>
+            <% }) %>
+    </ul>
+
+</body>
+
+</html>

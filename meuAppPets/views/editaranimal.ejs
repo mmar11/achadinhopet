@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Animais</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1>Animais</h1>
+    <hr>
+    <p>Editar animais Perdidos</p>
+
+    <form action="/animais/editar?_method=PUT" method="POST" name="cadastroanimais">
+        <label for="cadastroanimais">Nome</label>
+        <input type="text" required name="nome" value="<%= animal.nome %>">
+        <p>Especie</p>
+        <label for="cachorro">Cachorro</label>
+        <input type="radio" name="especie" value="cachorro" default=<% animal.especie==="cachorro" %>>
+        <br>
+        <label for="gato">Gato</label>
+        <input type="radio" name="especie" value="gato" default=<% animal.especie==="gato" %> >
+        <br>
+        <label for="ave">Ave</label>
+        <input type="radio" name="especie" value="ave" default=<% animal.especie==="ave" %>>
+        <p></p>
+        <input type="submit" value="Enviar ">
+    </form>
+
+
+</body>
+
+</html>

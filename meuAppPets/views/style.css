@@ -1,0 +1,16 @@
+body{
+    background-image: url(./pets-1110x530.jpg);
+    background-position: center top;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    
+}
+.form-control{
+    align-items: center;
+}
+main{
+    background-color: rgba(85, 248, 125, .5);
+    background-image: var(--nav-bar-background-gradient);
+}
+
+

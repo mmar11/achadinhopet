@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Animais</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1>Animais</h1>
+    <hr>
+    <p>Cadastrar animais Perdidos</p>
+
+    <form action="" method="POST" name="cadastroanimais" enctype="multipart/form-data">
+        <label for="cadastroanimais">Nome</label>
+        <input type="text" required name="nome">
+        <p>Especie</p>
+        <label for="cachorro">Cachorro</label>
+        <input type="radio" name="especie" value="cachorro">
+        <br>
+        <label for="gato">Gato</label>
+        <input type="radio" name="especie" value="gato">
+        <br>
+        <label for="ave">Ave</label>
+        <input type="radio" name="especie" value="ave">
+        <p></p>
+        <label for="">Há quanto tempo ele está perdido?</label><br>
+        <input type="range" name="tempo" id=""><br><br>
+        <label for="foto"></label>
+        <input type="file" name="foto" id="">
+        <br><br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+
+</html>
