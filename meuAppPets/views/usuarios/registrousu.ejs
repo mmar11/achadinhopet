@@ -1,29 +1,43 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
+<%- include('../partials/navpets')%>
     <h1>Registro de usuário</h1>
 
-    <form action="" method="POST" name="registrousu" id="">
-        <label for="nome">Nome</label><br>
-        <input type="text" name="nome" id="" required><br><br>
-        <label for="email">e-mail</label><br>
-        <input type="email" name="email" id=""><br><br>
-        <label for="senha">Senha</label><br>
-        <input type="password" name="senha" required>
-        <p></p>
-        <button type="submit">Registrar</button>
 
-    </form>
+    <main>
+        <form>
+            <div class="container">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nome</label>
+                    <input class="form-control " name="nome" type="text" placeholder="Seu Nome aqui!" aria-label="default input example">
+                </div> <br>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Endereço de email</label>
+                    <input type="email" class="form-control" name="nome" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
+                    <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
+                </div><br>
+
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" class="form-control" name="senha" id="exampleInputPassword1" placeholder="Senha">
+                </div><br>
+
+                <div class="form-group">
+                    <label for="inputPassword2">Confirma Senha</label>
+                    <input type="password" class="form-control" name="senha2" id="exampleInputPassword2" placeholder="Repetir Senha">
+                </div><br>
 
 
-</body>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Aceito os termos</label>
+                </div>
 
-</html>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </form>
+
+
+
+        </body>
+
+        </html>
