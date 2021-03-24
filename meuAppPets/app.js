@@ -7,9 +7,12 @@ var methodOverride = require('method-override')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var petsRouter = require('./routes/pets')
-var animaisRouter = require('./routes/animais')
-var usuRouter = require('./routes/usuarios')
+var petsRouter = require('./routes/pets');
+var animaisRouter = require('./routes/animais');
+var usuRouter = require('./routes/usuarios');
+var cadsRouter = require('./routes/cadastrou');
+var loginRouter = require('./routes/login');
+
 
 var app = express();
 
@@ -27,10 +30,11 @@ app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/pets', petsRouter)
-app.use('/animais', animaisRouter)
-app.use('/usuarios', usuRouter)
-
+app.use('/pets', petsRouter);
+app.use('/animais', animaisRouter);
+app.use('/usuarios', usuRouter);
+app.use('/cadastrou', cadsRouter);
+app.use('/login', loginRouter);
 app.use((req, res) => { res.status(404).render('not-found') })
 
 // catch 404 and forward to error handler
