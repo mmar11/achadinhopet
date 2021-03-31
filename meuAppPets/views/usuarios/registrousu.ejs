@@ -1,43 +1,58 @@
 <%- include('../partials/navpets')%>
     <h1>Registro de usuário</h1>
 
+    <% if(typeof(errors)!= "undefined"){  %>
+        <p style="color: red;">ERROR</p>
+        <ul>
+            <% errors.forEach((atual) =>{  %>
+                <li>
+                    <%= atual.msg %>
+                </li>
 
-    <main>
-        <form>
-            <div class="container">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Nome</label>
-                    <input class="form-control " name="nome" type="text" placeholder="Seu Nome aqui!" aria-label="default input example">
-                </div> <br>
-
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Endereço de email</label>
-                    <input type="email" class="form-control" name="nome" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
-                    <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
-                </div><br>
-
-                <div class="form-group">
-                    <label for="senha">Senha</label>
-                    <input type="password" class="form-control" name="senha" id="exampleInputPassword1" placeholder="Senha">
-                </div><br>
-
-                <div class="form-group">
-                    <label for="inputPassword2">Confirma Senha</label>
-                    <input type="password" class="form-control" name="senha2" id="exampleInputPassword2" placeholder="Repetir Senha">
-                </div><br>
-
-
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Aceito os termos</label>
-                </div>
-
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </div>
-        </form>
+                <%    })  %>
+        </ul>
 
 
 
-        </body>
+        <%  }  %>
 
-        </html>
+
+            <main>
+                <form action="" method="POST">
+                    <div class="container">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nome</label>
+                            <input class="form-control " name="nome" type="text" placeholder="Seu Nome aqui!" aria-label="default input example">
+                        </div> <br>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Endereço de email</label>
+                            <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
+                            <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
+                        </div><br>
+
+                        <div class="form-group">
+                            <label for="senha">Senha</label>
+                            <input type="password" class="form-control" name="senha" id="exampleInputPassword1" placeholder="Senha">
+                        </div><br>
+
+                        <div class="form-group">
+                            <label for="inputPassword2">Confirma Senha</label>
+                            <input type="password" class="form-control" name="confsenha" id="exampleInputPassword2" placeholder="Repetir Senha">
+                        </div><br>
+
+
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Aceito os termos</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </form>
+
+
+
+                </body>
+
+                </html>

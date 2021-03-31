@@ -10,7 +10,7 @@ var usersRouter = require('./routes/users');
 var petsRouter = require('./routes/pets')
 var animaisRouter = require('./routes/animais')
 var usuRouter = require('./routes/usuarios')
-
+let logMiddleware = require('./middlewares/logSite')
 var app = express();
 
 // view engine setup
@@ -24,12 +24,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
+app.use(logMiddleware)
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/pets', petsRouter)
 app.use('/animais', animaisRouter)
 app.use('/usuarios', usuRouter)
+
 
 app.use((req, res) => { res.status(404).render('not-found') })
 

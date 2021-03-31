@@ -2,6 +2,7 @@ const path = require('path')
 const fs = require('fs')
 const bcrypt = require('bcrypt')
 const { parse } = require('path')
+const { check, validationResult, body } = require('express-validator')
 
 let usuarioJSON = path.join('Dados', 'usuarios.json')
 
@@ -12,12 +13,18 @@ let usuarioController = {
     },
 
     salvarUsu: (req, res) => {
-        let { nome, email, senha } = req.body;
-        let senhaC = bcrypt.hashSync(senha, 10)
+        const validacaoErros = (validationResult(req))
 
-        let dadosUsu = JSON.stringify({ nome, email, senhaC })
-        fs.writeFileSync(usuarioJSON, dadosUsu)
-        res.send('usuario cadastrado')
+        if (validacaoErros.isEmpty()) {
+            let { nome, email, senha } = req.body;
+            let senhaC = bcrypt.hashSync(senha, 10)
+
+            let dadosUsu = JSON.stringify({ nome, email, senhaC })
+            fs.writeFileSync(usuarioJSON, dadosUsu)
+            res.render('../views/usuarios/login')
+        } else {
+            res.render('../views/usuarios/registrousu', { errors: validacaoErros.errors })
+        }
     },
 
 

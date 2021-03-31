@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 const animaisController = require('../Controllers/animaisController')
+const animaisControllerAsync = require('../Controllers/animaisControllerAsync')
+
 const multer = require('multer')
 const path = require('path')
 
@@ -21,7 +23,7 @@ var upload = multer({ storage: storage })
 router.get('/', animaisController.consultaquery)
 router.get('/cadastroanimais', animaisController.cadastro)
 router.get('/sucesso', animaisController.sucesso)
-router.post('/cadastroanimais', upload.any(), animaisController.salvar)
+router.post('/cadastroanimais', upload.any(), animaisControllerAsync.salvar)
 router.get('/:id/editar', animaisController.editar)
 router.put('/editar', animaisController.editarput)
 router.get('/consultar', animaisController.listarAnimais)
